@@ -1,4 +1,4 @@
-FROM buildpack-deps:wheezy
+FROM buildpack-deps:jessie
 
 # Set root password to root. Useful when debugging this container to install new packages
 RUN echo "root:root" | chpasswd
@@ -24,8 +24,7 @@ RUN apt-get update && apt-get install -y \
         autoconf \
         m4 \
         libc6-i386 \
-    && apt-get remove -y gcc gcc-4.7 g++ g++-4.7 libstdc++6-4.7-dev binutils  cpp cpp-4.7 \
-    && apt-get autoremove -y \
+    && apt-get remove -y gcc gcc-4.9 g++ g++-4.9 libstdc++-4.9-dev binutils  cpp cpp-4.9 libasan1 libatomic1 libcilkrts5 libcloog-isl4 libgcc-4.9-dev libisl10 libitm1 liblsan0 libmpc3 libquadmath0 libtsan0 libubsan0 liblsan0 libmpc3 libquadmath0 libtsan0 libubsan0 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
