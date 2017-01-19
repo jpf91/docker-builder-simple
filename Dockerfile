@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN echo "nfs-cache.lan:/ /nfscache nfs4 rw,noauto,user 0 0" >> /etc/fstab
+RUN echo "nfs-cache.lan:/ /home/build/nfs nfs4 rw,noauto,user 0 0" >> /etc/fstab
 
 # Add build user
 RUN adduser --disabled-password --gecos "" build \
@@ -49,3 +49,5 @@ RUN mkdir build && cd build \
 # Initialize /home/build directory
 WORKDIR /home/build
 USER build
+
+RUN mkdir /home/build/nfs
