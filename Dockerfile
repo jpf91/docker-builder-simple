@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
         m4 \
         libc6-i386 \
         nfs-common \
+        libatomic1 \
     && apt-get remove -y gcc gcc-4.9 g++ g++-4.9 libstdc++-4.9-dev binutils  cpp cpp-4.9 libasan1 libatomic1 libcilkrts5 libcloog-isl4 libgcc-4.9-dev libisl10 libitm1 liblsan0 libmpc3 libquadmath0 libtsan0 libubsan0 liblsan0 libmpc3 libquadmath0 libtsan0 libubsan0 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
