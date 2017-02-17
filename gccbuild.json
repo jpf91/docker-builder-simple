@@ -1,0 +1,21 @@
+{
+    "options":
+    {
+        "verifyCachedSources": false,
+        "forceDownload": false,
+        "forceExtract": false,
+        "numCPUs": 4,
+        "skipTargetStrip": false,
+        "skipHostStrip": false,
+        "keepBuildFiles": false,
+        "constants": {
+            "BUGURL": "--with-bugurl=https://bugzilla.gdcproject.org"
+        }
+    },
+    "system":
+    {
+        "cache": "/home/build/tmp",
+        "localTmp": "/home/build/tmp",
+        "gdcSource": "/home/build/tmp/GDC"
+    }
+}

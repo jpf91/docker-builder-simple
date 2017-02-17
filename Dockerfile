@@ -46,9 +46,15 @@ RUN mkdir build && cd build \
     && cp dub /usr/bin/ \
     && cd ../../ && rm -rf build
 
+# Install host toolchains
+ADD create_links.sh /usr/local/bin/
+ADD setup_host_toolchains.sh /usr/local/bin/
+ADD gdc_build_tools.tar.gz /usr/local/bin/
 
 # Initialize /home/build directory
 WORKDIR /home/build
 USER build
 
+RUN /usr/local/bin/setup_host_toolchains.sh
 RUN mkdir /home/build/nfs
+ADD gccbuild.json /home/build/.config/gccbuild.json
